@@ -1,0 +1,30 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <form asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="value">Value</label>
+            <input type="text" class="form-control" name="value" id="value" required>
+        </div>
+        <div class="form-group">
+            <label for="strategy">Strategy</label>
+            <select class="form-control" id="strategy" name="strategy">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br />
+    @if (ViewData["Result"] != null)
+    {
+        <div>
+            <p>Result: @ViewData["Result"]</p>
+        </div>
+    }
+</div>
+
